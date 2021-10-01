@@ -416,9 +416,9 @@ class App {
         const warn = (a, b) => `${a}\n${this.style('warn', this.style('warn', b))}`;
         switch(this.#step) {
             case this.Steps.TALENT:
-                if(this.#talentSelected.size != 3) return warn(this.list(), `⚠请选择3个天赋`);
+                if(this.#talentSelected.size != 4) return warn(this.list(), `⚠请选择3个天赋`);
                 this.#step = this.Steps.PROPERTY;
-                this.#propertyAllocation.total = 20 + this.#life.getTalentAllocationAddition(
+                this.#propertyAllocation.total = 30 + this.#life.getTalentAllocationAddition(
                     Array.from(this.#talentSelected).map(({id})=>id)
                 );
                 this.#propertyAllocation.TLT = Array.from(this.#talentSelected).map(({id})=>id);
@@ -539,7 +539,7 @@ class App {
                     tempLess>this.#propertyAllocation.total
                     || tempSet < 0
                 ) return  warn('⚠ 不能分配负数属性');
-                if(tempSet>10) return  warn('⚠ 单项属性最高分配10点');
+                if(tempSet>15) return  warn('⚠ 单项属性最高分配15点');
 
                 this.#propertyAllocation[tag] += value;
 
