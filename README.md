@@ -4,6 +4,8 @@
 
 English | [简体中文](./README-zh_CN.md)
 
+## 修改版，请 Fork 源项目
+
 ## Introduction
 
 - Game Life Restart
